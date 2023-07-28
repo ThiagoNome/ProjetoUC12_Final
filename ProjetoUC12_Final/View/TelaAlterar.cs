@@ -19,28 +19,29 @@ namespace ProjetoUC12_Final.View
             InitializeComponent();
         }
 
-        private void buscar_Click(object sender, EventArgs e)
+        private void Pesquisar_Click(object sender, EventArgs e)
         {
-            Filmes.Codigo = Convert.ToInt32(textBoxCod.Text);
+            Filmes.Codigo = Convert.ToInt32(txbCodigo.Text);
             FilmesMain mp = new();
             mp.BuscarCodigo();
 
-            textBoxCodigo.Text = Filmes.Codigo.ToString();
-            textBoxNome.Text = Filmes.NomeFilme;
-            textBoxDuracao.Text = Filmes.DuracaoFilme;
-            textBoxCategoria.Text = Filmes.CategoriaFilme;
-            textBoxData.Text = Filmes.DataLancamento;
-            textBoxFaixa.Text = Filmes.FaixaEtaria;
+            txbCodigo.Text = Filmes.Codigo.ToString();
+            txbFilme.Text = Filmes.NomeFilme;
+            txbDuracao.Text = Filmes.DuracaoFilme;
+            txbCategoria.Text = Filmes.CategoriaFilme;
+            txbDatadeLancamento.Text = Filmes.DataLancamento;
+            txbFaixaEtaria.Text = Filmes.FaixaEtaria;
+
         }
 
         private void Alterar_Click(object sender, EventArgs e)
         {
-            Filmes.Codigo = Convert.ToInt32(textBoxCod.Text);
-            Filmes.NomeFilme = textBoxNome.Text;
-            Filmes.DuracaoFilme = textBoxDuracao.Text;
-            Filmes.CategoriaFilme = textBoxCategoria.Text;
-            Filmes.DataLancamento = textBoxData.Text;
-            Filmes.FaixaEtaria = textBoxFaixa.Text;
+            Filmes.Codigo = Convert.ToInt32(txbCodigo.Text);
+            Filmes.NomeFilme = txbFilme.Text;
+            Filmes.DuracaoFilme = txbDuracao.Text;
+            Filmes.CategoriaFilme = txbCategoria.Text;
+            Filmes.DataLancamento = txbDatadeLancamento.Text;
+            Filmes.FaixaEtaria = txbFaixaEtaria.Text;
 
             FilmesMain mp = new();
             mp.AlterarFilme();

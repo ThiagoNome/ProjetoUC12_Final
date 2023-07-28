@@ -19,30 +19,37 @@ namespace ProjetoUC12_Final.View
             InitializeComponent();
         }
 
-        private void buscar_Click(object sender, EventArgs e)
+        private void Pesquisar_Click(object sender, EventArgs e)
         {
-            Filmes.Codigo = Convert.ToInt32(textBoxCod.Text);
+            Filmes.Codigo = Convert.ToInt32(txbCodigo.Text);
             FilmesMain mp = new();
             mp.BuscarCodigo();
 
-            textBoxCodigo.Text = Filmes.Codigo.ToString();
-            textBoxNome.Text = Filmes.NomeFilme;
-            textBoxDuracao.Text = Filmes.DuracaoFilme;
-            textBoxCategoria.Text = Filmes.CategoriaFilme;
-            textBoxData.Text = Filmes.DataLancamento;
-            textBoxFaixa.Text = Filmes.FaixaEtaria;
+            txbCodigo.Text = Filmes.Codigo.ToString();
+            txbFilme.Text = Filmes.NomeFilme;
+            txbDuracao.Text = Filmes.DuracaoFilme;
+            txbCategoria.Text = Filmes.CategoriaFilme;
+            txbDatadeLancamento.Text = Filmes.DataLancamento;
+            txbFaixaEtaria.Text = Filmes.FaixaEtaria;
+
         }
 
         private void Deletar_Click(object sender, EventArgs e)
         {
-            Filmes.Codigo = Convert.ToInt32(textBoxCodigo.Text);
-
+            Filmes.Codigo = Convert.ToInt32(txbCodigo.Text);
             FilmesMain mp = new();
             mp.DeletarFilme();
+
         }
+
         public void AbrirDeletar()
         {
             this.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

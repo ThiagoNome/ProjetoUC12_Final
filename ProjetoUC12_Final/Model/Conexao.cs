@@ -10,7 +10,7 @@ namespace ProjetoUC12_Final.Model
     {
         public static string Conectar()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\thi\source\repos\ProjetoUC12_Final\ProjetoUC12_Final\Model\filmesbd.mdf;Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\thiago.pnascimento9\source\repos\ProjetoUC12_Final123\ProjetoUC12_Final\Model\filmesbd.mdf;Integrated Security=True";
         }
     }
 }

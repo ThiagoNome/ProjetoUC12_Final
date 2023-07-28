@@ -31,20 +31,17 @@
             menuStrip1 = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            filmesToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
-            buscarToolStripMenuItem = new ToolStripMenuItem();
-            porCódigoToolStripMenuItem = new ToolStripMenuItem();
-            porNomeToolStripMenuItem = new ToolStripMenuItem();
-            porCategoriaToolStripMenuItem = new ToolStripMenuItem();
-            alterarToolStripMenuItem = new ToolStripMenuItem();
             deletarToolStripMenuItem = new ToolStripMenuItem();
+            pesquisarToolStripMenuItem = new ToolStripMenuItem();
+            pesquisarToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, cadastrarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, filmesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -61,65 +58,44 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
+            // filmesToolStripMenuItem
+            // 
+            filmesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, deletarToolStripMenuItem, pesquisarToolStripMenuItem, pesquisarToolStripMenuItem1 });
+            filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
+            filmesToolStripMenuItem.Size = new Size(53, 20);
+            filmesToolStripMenuItem.Text = "Filmes";
+            // 
             // cadastrarToolStripMenuItem
             // 
-            cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem1, buscarToolStripMenuItem, alterarToolStripMenuItem, deletarToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(62, 20);
-            cadastrarToolStripMenuItem.Text = "Produto";
-            // 
-            // cadastrarToolStripMenuItem1
-            // 
-            cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            cadastrarToolStripMenuItem1.Size = new Size(124, 22);
-            cadastrarToolStripMenuItem1.Text = "Cadastrar";
-            cadastrarToolStripMenuItem1.Click += cadastrarToolStripMenuItem1_Click;
-            // 
-            // buscarToolStripMenuItem
-            // 
-            buscarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { porCódigoToolStripMenuItem, porNomeToolStripMenuItem, porCategoriaToolStripMenuItem });
-            buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            buscarToolStripMenuItem.Size = new Size(124, 22);
-            buscarToolStripMenuItem.Text = "Buscar";
-            // 
-            // porCódigoToolStripMenuItem
-            // 
-            porCódigoToolStripMenuItem.Name = "porCódigoToolStripMenuItem";
-            porCódigoToolStripMenuItem.Size = new Size(146, 22);
-            porCódigoToolStripMenuItem.Text = "Por Código";
-            porCódigoToolStripMenuItem.Click += porCódigoToolStripMenuItem_Click;
-            // 
-            // porNomeToolStripMenuItem
-            // 
-            porNomeToolStripMenuItem.Name = "porNomeToolStripMenuItem";
-            porNomeToolStripMenuItem.Size = new Size(146, 22);
-            porNomeToolStripMenuItem.Text = "Por Nome";
-            porNomeToolStripMenuItem.Click += porNomeToolStripMenuItem_Click;
-            // 
-            // porCategoriaToolStripMenuItem
-            // 
-            porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
-            porCategoriaToolStripMenuItem.Size = new Size(146, 22);
-            porCategoriaToolStripMenuItem.Text = "Por Categoria";
-            porCategoriaToolStripMenuItem.Click += porCategoriaToolStripMenuItem_Click;
-            // 
-            // alterarToolStripMenuItem
-            // 
-            alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            alterarToolStripMenuItem.Size = new Size(124, 22);
-            alterarToolStripMenuItem.Text = "Alterar";
-            alterarToolStripMenuItem.Click += alterarToolStripMenuItem_Click;
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem.Text = "Alterar";
+            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
             // deletarToolStripMenuItem
             // 
             deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
             deletarToolStripMenuItem.Size = new Size(124, 22);
-            deletarToolStripMenuItem.Text = "Deletar";
+            deletarToolStripMenuItem.Text = "Cadastrar";
             deletarToolStripMenuItem.Click += deletarToolStripMenuItem_Click;
+            // 
+            // pesquisarToolStripMenuItem
+            // 
+            pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
+            pesquisarToolStripMenuItem.Size = new Size(124, 22);
+            pesquisarToolStripMenuItem.Text = "Deletar";
+            pesquisarToolStripMenuItem.Click += pesquisarToolStripMenuItem_Click;
+            // 
+            // pesquisarToolStripMenuItem1
+            // 
+            pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
+            pesquisarToolStripMenuItem1.Size = new Size(124, 22);
+            pesquisarToolStripMenuItem1.Text = "Pesquisar";
+            pesquisarToolStripMenuItem1.Click += pesquisarToolStripMenuItem1_Click;
             // 
             // TelaPrincipal
             // 
@@ -128,9 +104,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "TelaPrincipal";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TelaPrincipal";
+            Text = "Tela Principal";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -142,13 +120,10 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem arquivoToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem filmesToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem cadastrarToolStripMenuItem1;
-        private ToolStripMenuItem buscarToolStripMenuItem;
-        private ToolStripMenuItem porCódigoToolStripMenuItem;
-        private ToolStripMenuItem porNomeToolStripMenuItem;
-        private ToolStripMenuItem porCategoriaToolStripMenuItem;
-        private ToolStripMenuItem alterarToolStripMenuItem;
         private ToolStripMenuItem deletarToolStripMenuItem;
+        private ToolStripMenuItem pesquisarToolStripMenuItem;
+        private ToolStripMenuItem pesquisarToolStripMenuItem1;
     }
 }

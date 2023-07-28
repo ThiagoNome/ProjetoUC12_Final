@@ -1,5 +1,4 @@
-﻿using ProjetoUC12_Final.View.BUSCAS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,40 +17,29 @@ namespace ProjetoUC12_Final.View
             InitializeComponent();
         }
 
-        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            TelaCadastro cadastro = new TelaCadastro();
-            cadastro.Show();
-        }
-
-        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaDeletar deletar = new TelaDeletar();
-            deletar.Show();
-        }
-
-        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TelaAlterar alterar = new TelaAlterar();
             alterar.Show();
         }
 
-        private void porCódigoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaCodigo telaCodigo = new TelaCodigo();
-            telaCodigo.Show();
+            TelaCadastrar cadastrar = new TelaCadastrar();
+            cadastrar.Show();
+
         }
 
-        private void porNomeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pesquisarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaNome telaNome = new TelaNome();
-            telaNome.Show();
+            TelaDeletar deletar = new TelaDeletar();
+            deletar.Show();
         }
 
-        private void porCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pesquisarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            TelaCategoria categoria = new TelaCategoria();
-            categoria.Show();
+            TelaPesquisar pesquisar = new TelaPesquisar();
+            pesquisar.Show();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

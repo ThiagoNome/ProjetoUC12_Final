@@ -37,7 +37,7 @@ namespace ProjetoUC12_Final.Controller
 
                 if (msg == DialogResult.Yes)
                 {
-                    TelaCadastro cadastro = new();
+                    TelaCadastrar cadastro = new();
                     cadastro.AbrirCadastro();
                 }
                 else
@@ -161,7 +161,27 @@ namespace ProjetoUC12_Final.Controller
             }
         } /*FEITO*/
 
-        public void BuscarNome()
+        public static BindingSource BuscarFilmeNome()
+        {
+            SqlConnection cn = new(Conexao.Conectar());
+            SqlCommand cmd = new("pBuscaFilmeNome", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nomeFilme", Filmes.NomeFilme);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            BindingSource dados = new BindingSource();
+            dados.DataSource = dt;
+
+            return dados;
+
+        }
+
+        /*public void BuscarNome()
         {
             SqlConnection cn = new(Conexao.Conectar());
             SqlCommand cmd = new("pBuscaFilmeNome", cn);
@@ -199,9 +219,9 @@ namespace ProjetoUC12_Final.Controller
 
                 throw;
             }
-        } /*FEITO*/
+        }*/
 
-        public void BuscarCategoria()
+        /*public void BuscarCategoria()
         {
             SqlConnection cn = new(Conexao.Conectar());
             SqlCommand cmd = new("pFilmesCategorias", cn);
@@ -239,6 +259,6 @@ namespace ProjetoUC12_Final.Controller
 
                 throw;
             }
-        } /*FEITO*/
+        }*/
     }
 }
